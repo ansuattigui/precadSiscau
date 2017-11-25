@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CadastroEditDlg" widgetVar="CadastroEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditCadastroTitle}">
+            <h:form id="CadastroEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{cadastroController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditCadastroLabel_ID}" for="ID" />
+                        <p:inputText id="ID" value="#{cadastroController.selected.id}" title="#{bundle.EditCadastroTitle_ID}" />
+                        <p:outputLabel value="#{bundle.EditCadastroLabel_nomeCompleto}" for="nomeCompleto" />
+                        <p:inputText id="nomeCompleto" value="#{cadastroController.selected.nomeCompleto}" title="#{bundle.EditCadastroTitle_nomeCompleto}" />
+                        <p:outputLabel value="#{bundle.EditCadastroLabel_nomeGuerra}" for="nomeGuerra" />
+                        <p:inputText id="nomeGuerra" value="#{cadastroController.selected.nomeGuerra}" title="#{bundle.EditCadastroTitle_nomeGuerra}" />
+                        <p:outputLabel value="#{bundle.EditCadastroLabel_email}" for="email" />
+                        <p:inputText id="email" value="#{cadastroController.selected.email}" title="#{bundle.EditCadastroTitle_email}" />
+                        <p:outputLabel value="#{bundle.EditCadastroLabel_postoGraduacao}" for="postoGraduacao" />
+                        <p:inputText id="postoGraduacao" value="#{cadastroController.selected.postoGraduacao}" title="#{bundle.EditCadastroTitle_postoGraduacao}" />
+                        <p:outputLabel value="#{bundle.EditCadastroLabel_identidade}" for="identidade" />
+                        <p:inputText id="identidade" value="#{cadastroController.selected.identidade}" title="#{bundle.EditCadastroTitle_identidade}" />
+                        <p:outputLabel value="#{bundle.EditCadastroLabel_cpf}" for="cpf" />
+                        <p:inputText id="cpf" value="#{cadastroController.selected.cpf}" title="#{bundle.EditCadastroTitle_cpf}" />
+                        <p:outputLabel value="#{bundle.EditCadastroLabel_perfilInternet}" for="perfilInternet" />
+                        <p:inputText id="perfilInternet" value="#{cadastroController.selected.perfilInternet}" title="#{bundle.EditCadastroTitle_perfilInternet}" />
+                        <p:outputLabel value="#{bundle.EditCadastroLabel_dataCadastro}" for="dataCadastro" />
+                        <p:inputText id="dataCadastro" value="#{cadastroController.selected.dataCadastro}" title="#{bundle.EditCadastroTitle_dataCadastro}" />
+                        <p:outputLabel value="#{bundle.EditCadastroLabel_processado}" for="processado" />
+                        <p:selectBooleanCheckbox id="processado" value="#{cadastroController.selected.processado}" />
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{cadastroController.update}" value="#{bundle.Save}" update="display,:CadastroListForm:datalist,:growl" oncomplete="handleSubmit(args, 'CadastroEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="CadastroEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

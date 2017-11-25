@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="CadastroViewDlg" widgetVar="CadastroViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewCadastroTitle}">
+            <h:form id="CadastroViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{cadastroController.selected != null}">
+                        <h:outputText value="#{bundle.ViewCadastroLabel_ID}"/>
+                        <h:outputText value="#{cadastroController.selected.id}" title="#{bundle.ViewCadastroTitle_ID}"/>
+                        <h:outputText value="#{bundle.ViewCadastroLabel_nomeCompleto}"/>
+                        <h:outputText value="#{cadastroController.selected.nomeCompleto}" title="#{bundle.ViewCadastroTitle_nomeCompleto}"/>
+                        <h:outputText value="#{bundle.ViewCadastroLabel_nomeGuerra}"/>
+                        <h:outputText value="#{cadastroController.selected.nomeGuerra}" title="#{bundle.ViewCadastroTitle_nomeGuerra}"/>
+                        <h:outputText value="#{bundle.ViewCadastroLabel_email}"/>
+                        <h:outputText value="#{cadastroController.selected.email}" title="#{bundle.ViewCadastroTitle_email}"/>
+                        <h:outputText value="#{bundle.ViewCadastroLabel_postoGraduacao}"/>
+                        <h:outputText value="#{cadastroController.selected.postoGraduacao}" title="#{bundle.ViewCadastroTitle_postoGraduacao}"/>
+                        <h:outputText value="#{bundle.ViewCadastroLabel_identidade}"/>
+                        <h:outputText value="#{cadastroController.selected.identidade}" title="#{bundle.ViewCadastroTitle_identidade}"/>
+                        <h:outputText value="#{bundle.ViewCadastroLabel_cpf}"/>
+                        <h:outputText value="#{cadastroController.selected.cpf}" title="#{bundle.ViewCadastroTitle_cpf}"/>
+                        <h:outputText value="#{bundle.ViewCadastroLabel_perfilInternet}"/>
+                        <h:outputText value="#{cadastroController.selected.perfilInternet}" title="#{bundle.ViewCadastroTitle_perfilInternet}"/>
+                        <h:outputText value="#{bundle.ViewCadastroLabel_dataCadastro}"/>
+                        <h:outputText value="#{cadastroController.selected.dataCadastro}" title="#{bundle.ViewCadastroTitle_dataCadastro}"/>
+                        <h:outputText value="#{bundle.ViewCadastroLabel_processado}"/>
+                        <p:selectBooleanCheckbox value="#{cadastroController.selected.processado}" disabled="true"/>
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="CadastroViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

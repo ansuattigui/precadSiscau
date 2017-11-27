@@ -12,8 +12,6 @@
             <h:form id="CadastroViewForm">
                 <h:panelGroup id="display">
                     <p:panelGrid columns="2" rendered="#{cadastroController.selected != null}">
-                        <h:outputText value="#{bundle.ViewCadastroLabel_ID}"/>
-                        <h:outputText value="#{cadastroController.selected.id}" title="#{bundle.ViewCadastroTitle_ID}"/>
                         <h:outputText value="#{bundle.ViewCadastroLabel_nomeCompleto}"/>
                         <h:outputText value="#{cadastroController.selected.nomeCompleto}" title="#{bundle.ViewCadastroTitle_nomeCompleto}"/>
                         <h:outputText value="#{bundle.ViewCadastroLabel_nomeGuerra}"/>
@@ -26,8 +24,6 @@
                         <h:outputText value="#{cadastroController.selected.identidade}" title="#{bundle.ViewCadastroTitle_identidade}"/>
                         <h:outputText value="#{bundle.ViewCadastroLabel_cpf}"/>
                         <h:outputText value="#{cadastroController.selected.cpf}" title="#{bundle.ViewCadastroTitle_cpf}"/>
-                        <h:outputText value="#{bundle.ViewCadastroLabel_perfilInternet}"/>
-                        <h:outputText value="#{cadastroController.selected.perfilInternet}" title="#{bundle.ViewCadastroTitle_perfilInternet}"/>
                         <h:outputText value="#{bundle.ViewCadastroLabel_dataCadastro}"/>
                         <h:outputText value="#{cadastroController.selected.dataCadastro}" title="#{bundle.ViewCadastroTitle_dataCadastro}"/>
                         <h:outputText value="#{bundle.ViewCadastroLabel_processado}"/>

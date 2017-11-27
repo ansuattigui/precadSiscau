@@ -6,7 +6,8 @@
 package br.eb.ctex.precadsiscau.modelo;
 
 import java.io.Serializable;
-import java.util.Calendar;
+import java.time.Instant;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -33,8 +34,13 @@ public class Cadastro implements Serializable {
     private String cpf;
     private Short perfilInternet;
     @Temporal(TemporalType.DATE)
-    private Calendar dataCadastro;
+    private Date dataCadastro;
     private Boolean processado;
+    
+    public Cadastro() {
+        dataCadastro = Date.from(Instant.now());
+    }
+    
     
     public Long getId() {
         return id;
@@ -145,14 +151,14 @@ public class Cadastro implements Serializable {
     /**
      * @return the dataCadastro
      */
-    public Calendar getDataCadastro() {
+    public Date getDataCadastro() {
         return dataCadastro;
     }
 
     /**
      * @param dataCadastro the dataCadastro to set
      */
-    public void setDataCadastro(Calendar dataCadastro) {
+    public void setDataCadastro(Date dataCadastro) {
         this.dataCadastro = dataCadastro;
     }
 

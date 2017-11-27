@@ -15,13 +15,15 @@
 
         <p:growl id="growl" life="3000" />
 
-        <p:layout fullPage="true">
+        <p:layout fullPage="false" style="width: 900px; height:830px; margin: 0 auto;" >
             <p:layoutUnit position="north" size="65" header="#{bundle.AppName}">
                 <h:form id="menuForm">
                     <p:menubar>
                         <p:menuitem value="#{bundle.Home}" outcome="/index" icon="ui-icon-home"/>
                         <p:submenu label="#{bundle.Maintenance}">
                             <p:menuitem value="Cadastro" outcome="/cadastro/List" />
+                            <p:menuitem value="#{bundle.Create}" icon="ui-icon-plus"  actionListener="#{cadastroController.prepareCreate}" outcome="/cadastro/Create"/>
+
                         </p:submenu>
                     </p:menubar>
                 </h:form>
